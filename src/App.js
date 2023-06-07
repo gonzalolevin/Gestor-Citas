@@ -19,15 +19,35 @@ function App() {
    // console.log(tarjetas);
   }
 
+  function EliminarTarjeta(id)
+  {
+    
+    setTarjetas(tarjetas.filter(tarjetas.id != id));
 
+  }
 
   return (
     <div className="App container mt-5">
       <Formulario onAgregarTarjeta = {RecibirDatos}/>
       
       {tarjetas.map((tarjeta) => (
-      <Tarjeta form = {tarjeta.data} key={tarjeta.id}/>
-      ) )}
+
+<div className="one-half column asd derecha">
+
+      <Tarjeta
+
+        key={tarjeta.id}
+
+        datos={tarjeta.data}
+
+      EliminarTarjeta = {() => EliminarTarjeta(tarjetas.id)}
+      />
+
+</div>
+
+
+
+))}
       
 
     </div>
