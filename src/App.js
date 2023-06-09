@@ -25,29 +25,18 @@ function App() {
 }
 
   return (
-    <div className="App container mt-5">
-      <Formulario onAgregarTarjeta = {RecibirDatos}/>
-      
+    <div>
+      <Formulario onAgregarTarjeta = {RecibirDatos}/> 
+      <div className='one-half column'>    
+      <h2 className="text-center mb-4">administra tus citas</h2>
       {tarjetas.map((tarjeta) => (
-
-<div className="one-half column asd derecha">
-
       <Tarjeta
-
         key={tarjeta.id}
-
         datos={tarjeta.data}
-
-      OnEliminarTarjeta = {() => elimnarTarjeta(tarjeta.id)}
-      />
-
-</div>
-
-
-
+        OnEliminarTarjeta = {() => elimnarTarjeta(tarjeta.id)}/>
+    
 ))}
-      
-
+    </div> 
     </div>
   );
 }
