@@ -19,12 +19,10 @@ function App() {
    // console.log(tarjetas);
   }
 
-  function EliminarTarjeta(id)
-  {
-    
-    setTarjetas(tarjetas.filter(tarjetas.id != id));
-
-  }
+  const elimnarTarjeta = (id) => {
+    const tarjetass = tarjetas.filter((tarjeta) => tarjeta.id !== id)
+    setTarjetas(tarjetass);
+}
 
   return (
     <div className="App container mt-5">
@@ -40,7 +38,7 @@ function App() {
 
         datos={tarjeta.data}
 
-      EliminarTarjeta = {() => EliminarTarjeta(tarjetas.id)}
+      OnEliminarTarjeta = {() => elimnarTarjeta(tarjeta.id)}
       />
 
 </div>
